@@ -1,0 +1,27 @@
+{
+  "type": "record",
+  "name": "TestEvent",
+  "namespace": "com.je.demo.app.avro",
+  "fields": [
+    {
+      "name": "username",
+      "type": "string"
+    },
+    {
+      "name": "counter",
+      "type": "int"
+    },
+    {
+      "name": "timeToProcess",
+      "type": "long"
+    },
+    {
+      "name": "error",
+      "type": "boolean"
+    },
+    {
+      "name": "topic",
+      "type": "string"
+    }
+  ]
+}

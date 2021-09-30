@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>pom</packaging>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.5.5</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <groupId>com.je.demo</groupId>
+  <artifactId>app-kafka-gatling</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>app-kafka-gatling</name>
+  <description>Multi Module project to test kafka with gatling, prometheus and grafana</description>
+
+  <modules>
+    <!-- Schemas avro and generated classes to be use by gatling and kafka-app -->
+    <module>app-avro-schemas</module>
+    <!-- Gatling performance test -->
+    <module>app-gatling-test</module>
+    <!-- App with a kafka consumer to be tested -->
+    <module>app</module>
+  </modules>
+
+  <properties>
+    <avro.version>1.10.1</avro.version>
+    <confluent.version>6.2.0</confluent.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro</artifactId>
+      <version>${avro.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.confluent</groupId>
+      <artifactId>kafka-avro-serializer</artifactId>
+      <version>${confluent.version}</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>https://repo1.maven.org/maven2</url>
+    </repository>
+    <repository>
+      <id>confluent</id>
+      <url>https://packages.confluent.io/maven</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+</project>
