@@ -10,14 +10,11 @@
     <version>2.5.5</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-
   <groupId>com.je.demo</groupId>
   <artifactId>app-kafka-gatling</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-
   <name>app-kafka-gatling</name>
   <description>Multi Module project to test kafka with gatling, prometheus and grafana</description>
-
   <modules>
     <!-- Schemas avro and generated classes to be use by gatling and kafka-app -->
     <module>app-avro-schemas</module>
@@ -26,12 +23,10 @@
     <!-- App with a kafka consumer to be tested -->
     <module>app</module>
   </modules>
-
   <properties>
     <avro.version>1.10.1</avro.version>
     <confluent.version>6.2.0</confluent.version>
   </properties>
-
   <dependencies>
     <dependency>
       <groupId>org.apache.avro</groupId>
@@ -44,7 +39,6 @@
       <version>${confluent.version}</version>
     </dependency>
   </dependencies>
-
   <repositories>
     <repository>
       <id>central</id>
@@ -61,5 +55,4 @@
       </snapshots>
     </repository>
   </repositories>
-
 </project>
